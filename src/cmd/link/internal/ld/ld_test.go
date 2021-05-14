@@ -182,6 +182,8 @@ func TestWindowsBuildmodeCSharedASLR(t *testing.T) {
 		t.Skip("skipping windows amd64/386 only test")
 	}
 
+	testenv.MustHaveCGO(t)
+
 	t.Run("aslr", func(t *testing.T) {
 		testWindowsBuildmodeCSharedASLR(t, true)
 	})
